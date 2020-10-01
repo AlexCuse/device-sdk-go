@@ -1,7 +1,6 @@
 package service
 
 import (
-	"github.com/edgexfoundry/device-sdk-go/internal/common"
 	bootstrapConfig "github.com/edgexfoundry/go-mod-bootstrap/config"
 	"github.com/edgexfoundry/go-mod-core-contracts/clients/metadata"
 	dsModels "github.com/edgexfoundry/go-mod-core-contracts/models"
@@ -57,11 +56,11 @@ func (s *DeviceService) GetConfig() ConfigurationStruct {
 	}
 }
 func (s *DeviceService) GetDeviceClient() metadata.DeviceClient {
-	return common.DeviceClient
+	return s.edgexClients.DeviceClient
 }
 
 func (s *DeviceService) GetDeviceProfileClient() metadata.DeviceProfileClient {
-	return common.DeviceProfileClient
+	return s.edgexClients.DeviceProfileClient
 }
 
 func (s *DeviceService) GetDeviceProfilesDirectory() string {
